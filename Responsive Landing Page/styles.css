@@ -1,0 +1,161 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    transition: background-color 0.3s ease;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul li {
+    margin: 0 1em;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    color: #ff6347;
+}
+
+section {
+    padding: 100px 20px;
+    margin-top: 60px;
+    height: 100vh;
+}
+
+#home { background: #f4f4f4; }
+#about { background: #e4e4e4; }
+#services { background: #d4d4d4; }
+#contact { background: #c4c4c4; }
+
+html {
+    scroll-behavior: smooth;
+}
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    z-index: 1;
+    left: 0; /* Ensure dropdown starts from the left edge */
+    top: 100%; /* Position dropdown below its parent */
+}
+
+.dropdown-content li {
+    display: block;
+}
+
+.dropdown-content li a {
+    padding: 12px 16px;
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content li a:hover {
+    background-color: #575757;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.hamburger-menu .bar {
+    height: 3px;
+    width: 25px;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar ul li {
+        text-align: center;
+        padding: 14px 0;
+        border-top: 1px solid #575757;
+    }
+
+    .navbar ul li a {
+        font-size: 1.5em;
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+
+    .navbar.responsive ul {
+        display: flex;
+    }
+}
+.sticky {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.navbar ul li a {
+    position: relative;
+    overflow: hidden;
+}
+
+.navbar ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background: #ff6347;
+    transition: transform 0.3s ease;
+    transform: scaleX(0);
+    transform-origin: right;
+}
+
+.navbar ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+.navbar ul li a.active {
+    color: #ff6347;
+}
+
+
+
+
